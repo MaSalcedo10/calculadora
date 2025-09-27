@@ -1,7 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
 
+
 class Operaciones:
+
     @staticmethod
     def suma(a, b):
         return a + b
@@ -21,6 +23,7 @@ class Operaciones:
         except ZeroDivisionError:
             messagebox.showerror("Error", "No se puede dividir entre cero.")
             return None
+
 
 def calcular(operacion):
     try:
@@ -43,6 +46,8 @@ def calcular(operacion):
         resultado_label.config(text=f"Resultado: {resultado}")
 
 # Crear ventana principal
+
+
 ventana = tk.Tk()
 ventana.title("Calculadora con Tkinter")
 ventana.geometry("300x300")
@@ -58,10 +63,14 @@ entry2 = tk.Entry(ventana)
 entry2.pack()
 
 # Botones de operación
-tk.Button(ventana, text="Sumar", command=lambda: calcular("suma")).pack(pady=5)
-tk.Button(ventana, text="Restar", command=lambda: calcular("resta")).pack(pady=5)
-tk.Button(ventana, text="Multiplicar", command=lambda: calcular("multiplicacion")).pack(pady=5)
-tk.Button(ventana, text="Dividir", command=lambda: calcular("division")).pack(pady=5)
+tk.Button(ventana, text="Sumar",
+          command=lambda: calcular("suma")).pack(pady=5)
+tk.Button(ventana, text="Restar",
+          command=lambda: calcular("resta")).pack(pady=5)
+tk.Button(ventana, text="Multiplicar",
+          command=lambda: calcular("multiplicacion")).pack(pady=5)
+tk.Button(ventana, text="Dividir",
+          command=lambda: calcular("division")).pack(pady=5)
 
 # Resultado
 resultado_label = tk.Label(ventana, text="Resultado: ")
